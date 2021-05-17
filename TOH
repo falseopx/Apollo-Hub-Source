@@ -113,12 +113,12 @@ a:Toggle("Time Freeze", function(value)
 game:GetService("Players").LocalPlayer.PlayerScripts.timefreeze.Value = value
 end)
 
-a:Toggle("Infinte Jump", function(value)
+a:Toggle("infinite Jump", function(value)
 infjumpenabled = value
 end)
 
 
 --B
 
-b:Button("Made By KarumuBlox#2391", function()
+b:Button("Made By APollo#2391", function()
 end)
