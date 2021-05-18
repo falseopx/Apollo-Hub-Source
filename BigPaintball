@@ -43,7 +43,7 @@ end)
 Gun:Button("Increased Fire Rate", function()
         for i,v in pairs(game:GetService("ReplicatedStorage").Framework.Modules["1 | Directory"].Guns:GetChildren()) do
             pcall(function()
-                require(v)[tostring(i)].firerate = math.huge
+                require(v)[tostring(i)].automatic = 999999
             end)
         end
 end)
