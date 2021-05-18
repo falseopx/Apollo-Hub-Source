@@ -106,6 +106,14 @@ for i,v in pairs(game:GetService("Workspace").tower.sections.finish:GetChildren(
 end
 end)
 
+a:Button("Delete Kill Parts", function()
+for i,v in pairs(game.Workspace:GetDescendants()) do
+	if v:FindFirstChild("kills") then 
+		v:destroy()
+	end
+end
+end)
+
 
 
 
