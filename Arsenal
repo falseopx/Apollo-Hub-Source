@@ -2,7 +2,7 @@ local CoreGui = game:GetService("StarterGui")
 
    CoreGui:SetCore("SendNotification", {
 	Title = "Game Detected!";
-	Text = "Loading UI | Big PaintBall";
+	Text = "Loading UI | Arsenal";
 	Duration = 5;
 })
 
@@ -18,8 +18,8 @@ local b = Library:Window("Credits")
 
 
    CoreGui:SetCore("SendNotification", {
-	Title = "Game Detected!";
-	Text = "Loading UI | Arsenal";
+	Title = "Loaded!";
+	Text = "Made by APollo#2391";
 	Duration = 5;
 })
 
