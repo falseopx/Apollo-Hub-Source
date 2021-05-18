@@ -33,6 +33,16 @@ game:GetService("UserInputService").JumpRequest:Connect(function()
 	end
 end)
 
+local CoreGui = game:GetService("StarterGui")
+
+   CoreGui:SetCore("SendNotification", {
+	Title = "Game Detected!";
+	Text = "Loading UI | Tower Of Hell";
+	Duration = 5;
+})
+
+wait(5) 
+
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/6W1ZqV53"))()
 
 local a = Library:Window("Apollo Hub")
@@ -45,11 +55,6 @@ local CoreGui = game:GetService("StarterGui")
 	Duration = 5;
 })
 
-   CoreGui:SetCore("SendNotification", {
-	Title = "Game Detected!";
-	Text = "Loading UI | Tower Of Hell";
-	Duration = 5;
-})
 
 
 --A
