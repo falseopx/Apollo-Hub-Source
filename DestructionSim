@@ -1,3 +1,12 @@
+local CoreGui = game:GetService("StarterGui")
+
+   CoreGui:SetCore("SendNotification", {
+	Title = "Game Detected!";
+	Text = "Loading UI | Destruction Simulator";
+	Duration = 5;
+})
+
+wait(5) 
 
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/6W1ZqV53"))()
 
@@ -11,11 +20,6 @@ local CoreGui = game:GetService("StarterGui")
 	Duration = 5;
 })
 
-   CoreGui:SetCore("SendNotification", {
-	Title = "Game Detected!";
-	Text = "Loading UI | Destruction Simulator";
-	Duration = 5;
-})
 
 
 --A
