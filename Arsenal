@@ -29,6 +29,41 @@ game:GetService("UserInputService").JumpRequest:Connect(function()
 end)
 
 --A
+a:Toggle("AutoFarm",function(bool)
+   if bool then
+       wait(5)
+       getgenv().AutoFarm = true
+       local camera = game.Workspace.CurrentCamera
+       function getClosest()
+           local closestdistance = math.huge
+           local ClosetPlayer = nil
+           for i,v in pairs(game.Players:GetChildren()) do
+               if v ~= game.Players.LocalPlayer and v.Team ~= game.Players.LocalPlayer.Team then
+                   local distance = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).magnitude
+                   if distance < closestdistance then
+                       closestdistance = distance
+                       ClosetPlayer = v
+                   end
+               end
+           end
+           return ClosetPlayer
+       end
+
+       game:GetService("RunService").Stepped:connect(function()
+           if getgenv().AutoFarm == true then
+           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getClosest().Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 4)
+           camera.CFrame = CFrame.new(camera.CFrame.Position, getClosest().Character.Head.Position)
+           mouse1press()
+           wait()
+           mouse1release()
+           keypress(0x52)
+           end
+       end)
+   else
+       print("Stopped")
+       getgenv().AutoFarm = false
+   end
+end)
 
 a:Toggle("Infinite Jump", function(t)
 	infjumpenabled = t
@@ -345,3 +380,23 @@ end)
 gun:Toggle("No Spread", function(t)
 	NoSpreadVar = t
 end)
+
+gun:Button("RainBow Gun", function()
+local c = 1
+function zigzag(X)
+ return math.acos(math.cos(X * math.pi)) / math.pi
+end
+game:GetService("RunService").RenderStepped:Connect(function()
+ if game.Workspace.Camera:FindFirstChild('Arms') then
+  for i,v in pairs(game.Workspace.Camera.Arms:GetDescendants()) do
+   if v.ClassName == 'MeshPart' then 
+    v.Color = Color3.fromHSV(zigzag(c),1,1)
+    c = c + .0001
+   end
+  end
+ end
+end)
+end)
+
+
+b:DestroyGUI()
